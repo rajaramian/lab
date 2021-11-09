@@ -15,6 +15,7 @@ variable "mt" {
 resource "google_compute_instance" "myvm" {
         name = "myfirstvm"
         machine_type = var.mt
+        depends_on = [google_compute_instance.myvm1]
         zone = "us-central1-a"
         network_interface {
                 network = "default"
