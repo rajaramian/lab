@@ -1,9 +1,12 @@
 provider "google" {
 
-        project = "alpine-air-327011"
+        project = var.project
         region = "us-central1"
 }
 
+variable "project" {
+  type = string
+}
 variable "mt" {
     type = string
     default = "f1-micro"
